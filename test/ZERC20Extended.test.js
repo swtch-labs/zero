@@ -43,5 +43,4 @@ contract("ZERC20Extended", accounts => {
         }
     });
 
-    // Additional tests can be added here
 });
