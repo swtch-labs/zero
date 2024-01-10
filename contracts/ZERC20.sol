@@ -51,6 +51,14 @@ contract ZERC20 {
         emit Approval(msg.sender, _spender, _value);
         return true;
     }
+    
+    function _approve(address owner, address spender, uint256 amount) internal {
+        require(owner != address(0), "ZERC20: approve from the zero address");
+        require(spender != address(0), "ZERC20: approve to the zero address");
+
+        allowance[owner][spender] = amount;
+        emit Approval(owner, spender, amount);
+    }
 
     function transferFrom(address _from, address _to, uint256 _value) public noReentrant returns (bool success) {
         require(_value <= balanceOf[_from], "Insufficient balance");
