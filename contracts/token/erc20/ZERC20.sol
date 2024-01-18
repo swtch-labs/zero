@@ -37,7 +37,7 @@ contract ZERC20 {
     }
     
 
-    function transfer(address _to, uint256 _value) public noReentrant returns (bool success) {
+    function transfer(address _to, uint256 _value) virtual public noReentrant returns (bool success) {
         require(_to != address(0), "Transfer to the zero address is not allowed");
         require(balanceOf[msg.sender] >= _value, "Insufficient balance");
         balanceOf[msg.sender] -= _value;
@@ -46,7 +46,7 @@ contract ZERC20 {
         return true;
     }
 
-    function approve(address _spender, uint256 _value) public returns (bool success) {
+    function approve(address _spender, uint256 _value) virtual public returns (bool success) {
         allowance[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
         return true;
@@ -60,7 +60,7 @@ contract ZERC20 {
         emit Approval(owner, spender, amount);
     }
 
-    function transferFrom(address _from, address _to, uint256 _value) public noReentrant returns (bool success) {
+    function transferFrom(address _from, address _to, uint256 _value) virtual public noReentrant returns (bool success) {
         require(_value <= balanceOf[_from], "Insufficient balance");
         require(_value <= allowance[_from][msg.sender], "Insufficient allowance");
         balanceOf[_from] -= _value;
