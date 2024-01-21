@@ -1,46 +1,90 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
+/**
+ * @title ZRoleBasedAccessControl 
+ * @author astordigital@gmail.com
+ * @notice Zero Smart Contracts Role Based Access Control implementation.
+ */
 contract ZRoleBasedAccessControl {
+
+    /**
+     * @dev Owner of the smart contract.
+     */
     address public owner;
     
-    // Roles data structure where true means the address has the role
+    /**
+     * @dev Roles data structure, true equates the address has the role, false otherwise.
+     */
     mapping(bytes32 => mapping(address => bool)) private roles;
 
-    // Events for adding and removing roles
+    /**
+     * @dev Role granted event.
+     * @param role Role to grant.
+     * @param account Account receiving role grant.
+     */
     event RoleGranted(bytes32 indexed role, address indexed account);
+
+    /**
+     * @dev Role revocation event.
+     * @param role 
+     * @param account 
+     */
     event RoleRevoked(bytes32 indexed role, address indexed account);
 
     // Modifier to restrict functions to users with a specific role
+    /**
+     * @dev Modifier to restrict functions to users with a specific role.
+     * @param role Role to validate.
+     */
     modifier onlyRole(bytes32 role) {
-        require(roles[role][msg.sender], "Not authorized: lacks role");
+        require(roles[role][msg.sender], "Not authorized");
         _;
     }
-    // Modifier to restrict functions to the owner
+
+    /**
+     * @dev Modifier to restrict functions to the owner.
+     */
     modifier onlyOwner() {
         require(msg.sender == owner, "Only owner can perform this action");
         _;
     }
 
+    /**
+     * @dev Constructor
+     * @param owner_ Address of the smart contract owner.
+     */
     constructor(address owner_) {
         owner = owner_;
     }
 
-    // Function to grant a role to an address
+    /**
+     * @dev Grant a role to an address.
+     * @param role Role to assign.
+     * @param account Account receiving the role.
+     */
     function grantRole(bytes32 role, address account) public onlyOwner {
         // Add role-granting logic here (possibly restricted to admins)
         roles[role][account] = true;
         emit RoleGranted(role, account);
     }
 
-    // Function to revoke a role from an address
+    /**
+     * @dev Revoke a role from an address.
+     * @param role Role to revoke.
+     * @param account Account we are revoking the role from.
+     */
     function revokeRole(bytes32 role, address account) public onlyOwner {
         // Add role-revoking logic here (possibly restricted to admins)
         roles[role][account] = false;
         emit RoleRevoked(role, account);
     }
 
-    // Function to check if an address has a certain role
+    /**
+     * @dev Validate if an address has a certain role.
+     * @param role Role to validate.
+     * @param account Acccount to validate.
+     */
     function hasRole(bytes32 role, address account) public view returns (bool) {
         return roles[role][account];
     }
