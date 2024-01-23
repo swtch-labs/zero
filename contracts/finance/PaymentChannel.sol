@@ -96,20 +96,23 @@ contract PaymentChannel {
     /**
      * @dev Internal function to split a signature into its components.
      * @param sig The full signature to split.
+     * @return Tuple of the Signature components.
      */
     function splitSignature(bytes memory sig) internal pure returns (uint8, bytes32, bytes32) {
         require(sig.length == 65, "Invalid signature length");
-
+        // ECDSA signature component r, first 32 bytes of the signature
         bytes32 r;
+        // ECDSA signature component s, next 32 bytes of the signature
         bytes32 s;
+        // Ethereum recovery identifier.
         uint8 v;
-
+        // Common Ethereum pattern to decode the components of an ECDSA signature
         assembly {
             r := mload(add(sig, 32))
             s := mload(add(sig, 64))
             v := byte(0, mload(add(sig, 96)))
         }
-
+        // return tuple of Signature components
         return (v, r, s);
     }
 
