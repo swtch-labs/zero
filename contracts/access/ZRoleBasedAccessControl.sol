@@ -27,12 +27,11 @@ contract ZRoleBasedAccessControl {
 
     /**
      * @dev Role revocation event.
-     * @param role 
-     * @param account 
+     * @param role Role to revoke.
+     * @param account Associated account undergoing revocation of role grant.
      */
     event RoleRevoked(bytes32 indexed role, address indexed account);
 
-    // Modifier to restrict functions to users with a specific role
     /**
      * @dev Modifier to restrict functions to users with a specific role.
      * @param role Role to validate.
