@@ -62,7 +62,9 @@ contract PaymentChannel {
      */
     function isValidSignature(uint256 amount, bytes memory signature) internal view returns (bool) {
         bytes32 message = prefixed(keccak256(abi.encodePacked(this, amount)));
-        return recoverSigner(message, signature) == sender;
+        address signer = recoverSigner(message, signature);
+        require(signer != address(0), "Invalid ECDSA signature");
+        return signer == sender;
     }
 
     /**
