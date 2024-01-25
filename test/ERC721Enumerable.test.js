@@ -1,11 +1,11 @@
-const ZERC721Enumerable = artifacts.require("ZERC721Enumerable");
+const ERC721Enumerable = artifacts.require("ERC721Enumerable");
 
-contract("ZERC721Enumerable", accounts => {
+contract("ERC-721 Enumerable", accounts => {
     const [deployer] = accounts;
     let zerc721EnumerableInstance;
 
     beforeEach(async () => {
-        zerc721EnumerableInstance = await ZERC721Enumerable.new("TestToken", "TT");
+        zerc721EnumerableInstance = await ERC721Enumerable.new("TestToken", "TT");
     });
 
     it("should correctly track total supply", async () => {
@@ -16,6 +16,7 @@ contract("ZERC721Enumerable", accounts => {
         assert.equal(totalSupply.toNumber(), 2, "Total supply is incorrect");
     });
 
+    // TODO fix the test.
     // it("should enumerate owned tokens", async () => {
     //     await zerc721EnumerableInstance.mint(deployer, 1, { from: deployer });
     //     await zerc721EnumerableInstance.mint(deployer, 2, { from: deployer });

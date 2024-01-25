@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./ZERC721.sol";
+import "./ERC721.sol";
 
-contract ZERC721Metadata is ZERC721 {
+contract ERC721Metadata is ERC721 {
     mapping(uint256 => string) private _tokenURIs;
 
     constructor(string memory name_, string memory symbol_)
-        ZERC721(name_, symbol_) 
+        ERC721(name_, symbol_) 
     {
-        // Additional constructor logic if needed
+        // Additional initialization
     }
 
     function tokenURI(uint256 tokenId) public view returns (string memory) {

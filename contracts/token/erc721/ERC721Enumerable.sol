@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./ZERC721.sol";
+import "./ERC721.sol";
 
-contract ZERC721Enumerable is ZERC721 {
+contract ERC721Enumerable is ERC721 {
     // Array of all token IDs in existence
     uint256[] private _allTokens;
 
@@ -17,9 +17,9 @@ contract ZERC721Enumerable is ZERC721 {
     mapping(uint256 => uint256) private _ownedTokensIndex;
 
     constructor(string memory name_, string memory symbol_)
-        ZERC721(name_, symbol_) 
+        ERC721(name_, symbol_) 
     {
-        // Additional constructor logic if needed
+        // Additional initialization
     }
 
     function totalSupply() public view returns (uint256) {

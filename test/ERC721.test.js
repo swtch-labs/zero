@@ -1,14 +1,14 @@
-const ZERC721 = artifacts.require("ZERC721");
-const ZERC721Receiver = artifacts.require("ERC721Receiver");
+const ERC721 = artifacts.require("ERC721");
+const ERC721Receiver = artifacts.require("ERC721Receiver");
 
-contract("ZERC721", (accounts) => {
+contract("ERC-721", (accounts) => {
     const [deployer, recipient, anotherAccount] = accounts;
     let zerc721Instance;
     let receiverInstance;
 
     beforeEach(async () => {
-        zerc721Instance = await ZERC721.new("ZeroNFT", "ZNFT");
-        receiverInstance = await ZERC721Receiver.new();
+        zerc721Instance = await ERC721.new("ZeroNFT", "ZNFT");
+        receiverInstance = await ERC721Receiver.new();
     });
 
     it("should mint a token successfully", async () => {
