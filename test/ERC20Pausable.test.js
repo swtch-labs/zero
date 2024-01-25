@@ -1,11 +1,11 @@
-const ZERC20Pausable = artifacts.require("ZERC20Pausable");
+const ERC20Pausable = artifacts.require("ERC20Pausable");
 
-contract("ZERC20Pausable", accounts => {
+contract("ERC-20 Pausable", accounts => {
     const [owner, recipient, anotherAccount] = accounts;
     let tokenInstance;
 
     beforeEach(async () => {
-        tokenInstance = await ZERC20Pausable.new("ZeroToken", "ZTK", '1000');
+        tokenInstance = await ERC20Pausable.new("ZeroToken", "ZTK", '1000');
     });
 
     it("should assign the initial total supply to the owner", async () => {

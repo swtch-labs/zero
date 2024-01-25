@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./ZERC20.sol";
+import "./ERC20.sol";
 
-contract ZERC20Mintable is ZERC20 {
+contract ERC20Mintable is ERC20 {
     // Optional: Add a role-based access control for minting (like onlyOwner or onlyMinter)
 
     constructor(string memory name_, string memory symbol_, uint256 initialSupply)
-        ZERC20(name_, symbol_, initialSupply) 
+        ERC20(name_, symbol_, initialSupply) 
     {
-        // Additional constructor logic if needed
+        // Additional initialization
     }
 
     function mint(address to, uint256 amount) public {

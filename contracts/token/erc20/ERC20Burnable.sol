@@ -1,17 +1,17 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./ZERC20.sol";
+import "./ERC20.sol";
 
-contract ZERC20Burnable is ZERC20 {
+contract ERC20Burnable is ERC20 {
     constructor(string memory name_, string memory symbol_, uint256 initialSupply)
-        ZERC20(name_, symbol_, initialSupply)
+        ERC20(name_, symbol_, initialSupply)
     {
-        // Additional initialization, if needed
+        // Additional initialization
     }
 
     function burn(uint256 amount) public {
-        require(balanceOf[msg.sender] >= amount, "ZERC20Burnable: burn amount exceeds balance");
+        require(balanceOf[msg.sender] >= amount, "ERC-20 Burnable: burn amount exceeds balance");
 
         balanceOf[msg.sender] -= amount;
         totalSupply -= amount;
@@ -25,8 +25,8 @@ contract ZERC20Burnable is ZERC20 {
     }
 
     function _burn(address account, uint256 amount) internal {
-        require(account != address(0), "ZERC20Burnable: burn from the zero address");
-        require(balanceOf[account] >= amount, "ZERC20Burnable: burn amount exceeds balance");
+        require(account != address(0), "ERC-20 Burnable: burn from the zero address");
+        require(balanceOf[account] >= amount, "ERC-20 Burnable: burn amount exceeds balance");
 
         balanceOf[account] -= amount;
         totalSupply -= amount;

@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./ZERC20.sol";
+import "./ERC20.sol";
 
-contract ZERC20Extended is ZERC20 {
+contract ERC20Extended is ERC20 {
     constructor(string memory name_, string memory symbol_, uint256 initialSupply) 
-        ZERC20(name_, symbol_, initialSupply) 
+        ERC20(name_, symbol_, initialSupply) 
     {
-        // Initialization code if needed
+        // Additional initialization
     }
 
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {

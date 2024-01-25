@@ -1,11 +1,11 @@
-const ZERC20Extended = artifacts.require("ZERC20Extended");
+const ERC20Extended = artifacts.require("ERC20Extended");
 
-contract("ZERC20Extended", accounts => {
+contract("ERC-20 Extended", accounts => {
     const [owner, spender] = accounts;
     let token;
 
     beforeEach(async () => {
-        token = await ZERC20Extended.new("ZeroToken", "ZTK", web3.utils.toWei('1000', 'ether'));
+        token = await ERC20Extended.new("ZeroToken", "ZTK", web3.utils.toWei('1000', 'ether'));
     });
 
     it("should correctly increase the allowance", async () => {

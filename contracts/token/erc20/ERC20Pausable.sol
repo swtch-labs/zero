@@ -1,16 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./ZERC20.sol";
+import "./ERC20.sol";
 import "./Pausable.sol";
 
-contract ZERC20Pausable is ZERC20, Pausable {
+contract ERC20Pausable is ERC20, Pausable {
 
     constructor(string memory _name, string memory _symbol, uint256 _initialSupply)
-        ZERC20(_name, _symbol, _initialSupply) 
+        ERC20(_name, _symbol, _initialSupply) 
         Pausable()
     {
+        // Additional initialization
     }
+    
     // Override functions to include the whenNotPaused modifier
 
     function transfer(address _to, uint256 _value) public whenNotPaused override returns (bool success) {

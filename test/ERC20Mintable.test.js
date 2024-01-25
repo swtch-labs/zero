@@ -1,11 +1,11 @@
-const ZERC20Mintable = artifacts.require("ZERC20Mintable");
+const ERC20Mintable = artifacts.require("ERC20Mintable");
 
-contract("ZERC20Mintable", accounts => {
+contract("ERC-20 Mintable", accounts => {
     const [owner, recipient] = accounts;
     let token;
 
     beforeEach(async () => {
-        token = await ZERC20Mintable.new("ZeroToken", "ZTK", web3.utils.toWei('1000', 'ether'));
+        token = await ERC20Mintable.new("ZeroToken", "ZTK", web3.utils.toWei('1000', 'ether'));
     });
 
     it("should mint tokens correctly", async () => {
