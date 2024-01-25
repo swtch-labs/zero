@@ -1,6 +1,6 @@
-const MyToken = artifacts.require("ZERC20");
+const MyToken = artifacts.require("ERC20");
 
-contract("MyToken", accounts => {
+contract("ERC-20", accounts => {
     const [initialHolder, recipient, anotherAccount] = accounts;
     const BigNumber = web3.utils.BN;
     const initialSupply = new BigNumber(1000).mul(new BigNumber(10).pow(new BigNumber(18)));

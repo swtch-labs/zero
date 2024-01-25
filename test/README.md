@@ -1,6 +1,6 @@
-# ZERC20 Tests
+# ERC-20 Tests
 
-ZERC20 Smart Contract unit tests.
+ERC20 Smart Contract unit tests.
 
 ## Initialization
 Before each test, a new instance of the token is deployed with a fixed initial supply.

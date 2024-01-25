@@ -1,4 +1,4 @@
-const RoleBasedAccessControl = artifacts.require("ZRoleBasedAccessControl");
+const RoleBasedAccessControl = artifacts.require("RoleBasedAccessControl");
 
 contract("RoleBasedAccessControl", accounts => {
     const [admin, user1, user2] = accounts;

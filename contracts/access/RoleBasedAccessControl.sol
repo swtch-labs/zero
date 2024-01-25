@@ -2,11 +2,11 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 /**
- * @title ZRoleBasedAccessControl 
+ * @title RoleBasedAccessControl 
  * @author astordigital@gmail.com
- * @notice Zero Smart Contracts Role Based Access Control implementation.
+ * @notice Zero Smart Contracts Role Based Access Control implementation of ownership.
  */
-contract ZRoleBasedAccessControl {
+contract RoleBasedAccessControl {
 
     /**
      * @dev Owner of the smart contract.

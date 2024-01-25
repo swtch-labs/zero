@@ -2,11 +2,12 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 /**
- * @title ZERC20
+ * @title ERC20
  * @author astordigital@gmail.com
- * @notice ERC-20 Smart Contract Implementation
+ * @notice Zero Smart Contracts ERC-20 implementation.
  */
-contract ZERC20 {
+contract ERC20 {
+    
     string public name = "ZeroToken";
     string public symbol = "ZTK";
     uint8 public decimals = 18;

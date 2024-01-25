@@ -2,7 +2,8 @@
 
 A set of useful smart contract utilities.
 
-We dont use SafeMath, since as of Solidity 0.8.x and above arithmetic operations are safely handled. 
+We do not utilize SafeMath. 
+As of Solidity 0.8.x and above arithmetic operations are safely handled. 
 
 Note: Smart contracts have not undergone any audits to date. Use at your own risk until we have completed the audits.
 
@@ -31,7 +32,7 @@ truffle test
 
 ## Access
 Smart Contracts
-- ZRoleBasedAccessControl
+- RoleBasedAccessControl : Ownership implementation.
   
 ## Finance
 Smart Contracts
@@ -39,22 +40,28 @@ Smart Contracts
 - ProofOfFunds : Proof of funds.
 - SimpleEscrow : Escrow which provides a one-time use escrow.
   
-## Token
+## ERC-20 Token
 Smart Contracts
-- ZERC20 : ERC 20 implementation.
-- ZERC20Burnable : ERC 20 with burn capabilities.
-- ZERC20Extended : ERC 20 with allowance capabilities.
-- ZERC20Mintable : ERC 20 with mintable capabilities.
-- ZERC20Pausable : ERC 20 with pausable capabilities.
-- ZERC721 : ERC 721 implementation.
-- ZERC721Burnable : ERC 721 with burn capabilities.
-- ZERC721Enumerable : ERC 721 with enumeration capabilities.
-- ZERC721Metadata : ERC 721 with metadata token uri capabilities.
-- ZERC721Receiver : ERC 721 with receiver capabilities.
+- ERC20 : ERC 20 implementation.
+- ERC20Burnable : ERC 20 with burn capabilities.
+- ERC20Extended : ERC 20 with allowance capabilities.
+- ERC20Mintable : ERC 20 with mintable capabilities.
+- ERC20Pausable : ERC 20 with pausable capabilities.
+
+## ERC-721 Token
+Smart Contracts
+- ERC721 : ERC 721 implementation.
+- ERC721Burnable : ERC 721 with burn capabilities.
+- ERC721Enumerable : ERC 721 with enumeration capabilities.
+- ERC721Metadata : ERC 721 with metadata token uri capabilities.
+- ERC721Receiver : ERC 721 with receiver capabilities.
 
 ## In Progress 
 Smart Contracts we are building next.
+
 - ERC20Escrow : ERC20 token simple one-time use escrow.
 - ERC20ProofOfFunds : ERC20 token proof of funds.
 - MultiEscrow : Smart contract which can support many Escrow items for Eth.
 - ERC721Burnable : Finish the smart contract which can support burning ERC 721 tokens.
+- ERC-1155 : ERC1155 multi-token implementation.
+- ENS : Ethereum Name Service implementation.

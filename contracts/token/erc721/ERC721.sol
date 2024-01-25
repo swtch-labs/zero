@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-interface IERC721Receiver {
-    function onERC721Received(address operator, address from, uint256 tokenId, bytes calldata data) external returns (bytes4);
-}
+import "./ERC721Receiver.sol";
 
-contract ZERC721 {
+contract ERC721 {
     address public _owner;
 
     // Basic required state variables

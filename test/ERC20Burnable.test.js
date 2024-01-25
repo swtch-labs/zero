@@ -1,6 +1,6 @@
-const ZERC20Burnable = artifacts.require("ZERC20Burnable");
+const ZERC20Burnable = artifacts.require("ERC20Burnable");
 
-contract("ZERC20Burnable", accounts => {
+contract("ERC-20 Burnable", accounts => {
     const [owner, approvedAccount] = accounts;
     let token;
     const initialSupply = web3.utils.toWei('1000', 'ether');

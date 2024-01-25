@@ -1,11 +1,11 @@
-const ZERC721Metadata = artifacts.require("ZERC721Metadata");
+const ERC721Metadata = artifacts.require("ERC721Metadata");
 
-contract("ZERC721Metadata", (accounts) => {
+contract("ERC-721 Metadata", (accounts) => {
     const [deployer] = accounts;
     let zerc721MetadataInstance;
 
     beforeEach(async () => {
-        zerc721MetadataInstance = await ZERC721Metadata.new("TestToken", "TT");
+        zerc721MetadataInstance = await ERC721Metadata.new("TestToken", "TT");
     });
 
     it("should set correct token URI for a token", async () => {
