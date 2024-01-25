@@ -27,12 +27,19 @@ truffle test
 ## Smart Contracts
 
 - access  : Smart contracts related to role based access.
+- dns     : Smart contracts related to domain name systems.
 - finance : Smart contracts related to financial instrumentation.
 - token   : Smart contracts related to ERC token specifications, such as ERC20 and ERC721.
 
 ## Access
 Smart Contracts
 - RoleBasedAccessControl : Ownership implementation.
+
+## DNS
+Smart Contracts
+- Registry : Central smart contract that manages all domain names and their owners. It maps human-readable names to machine-readable identifiers.
+- Resolver : Translates names into addresses or other relevant information. It's where the actual resolution of names happens.
+- Registrar : Smart contract manages the allocation of subdomains under a top-level domain. For instance, 'alice.mydomain.eth' would be handled here.
   
 ## Finance
 Smart Contracts
@@ -64,4 +71,3 @@ Smart Contracts we are building next.
 - MultiEscrow : Smart contract which can support many Escrow items for Eth.
 - ERC721Burnable : Finish the smart contract which can support burning ERC 721 tokens.
 - ERC-1155 : ERC1155 multi-token implementation.
-- ENS : Ethereum Name Service implementation.
