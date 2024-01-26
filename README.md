@@ -45,7 +45,8 @@ Smart Contracts
 Smart Contracts
 - PaymentChannel : Unidirectional payment channel.
 - ProofOfFunds : Proof of funds.
-- SimpleEscrow : Escrow which provides a one-time use escrow.
+- SimpleEscrow : Escrow smart contract which provides a one-time use escrow.
+- MultiEscrow : Escrow smart contract which provides support many Escrow items and fee structure.
   
 ## ERC-20 Token
 Smart Contracts
@@ -68,6 +69,5 @@ Smart Contracts we are building next.
 
 - ERC20Escrow : ERC20 token simple one-time use escrow.
 - ERC20ProofOfFunds : ERC20 token proof of funds.
-- MultiEscrow : Smart contract which can support many Escrow items for Eth.
 - ERC721Burnable : Finish the smart contract which can support burning ERC 721 tokens.
 - ERC-1155 : ERC1155 multi-token implementation.
