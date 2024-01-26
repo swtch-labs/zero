@@ -8,6 +8,33 @@ As of Solidity 0.8.x and above arithmetic operations are safely handled.
 Note: Smart contracts have not undergone any audits to date. Use at your own risk until we have completed the audits.
 
 ## Setup
+Install node version manager to install Node on your system. 
+Follow the instructions listed here: https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+
+curl
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+wget
+```sh
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+source the .bashrc or .profile in the user directory.
+```sh
+source ~/.bashrc
+```
+
+check nvm version
+```sh
+nvm version
+```
+
+install Node 18.
+```sh
+nvm install 18
+```
+
 We use Truffle to manage compilation and testing.
 
 ```sh
