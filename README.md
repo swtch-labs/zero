@@ -24,7 +24,7 @@ Test smart contracts
 truffle test
 ```
 
-## Smart Contracts
+## Smart Contract Contexts
 
 - access  : Smart contracts related to role based access.
 - dns     : Smart contracts related to domain name systems.
@@ -51,7 +51,7 @@ Smart Contracts
 ## ERC-20 Token
 Smart Contracts
 - ERC20 : ERC 20 implementation.
-- ERC20Burnable : ERC 20 with burn capabilities.
+- ERC20Burnable : ERC 20 with burn capabilities. (Incomplete)
 - ERC20Extended : ERC 20 with allowance capabilities.
 - ERC20Mintable : ERC 20 with mintable capabilities.
 - ERC20Pausable : ERC 20 with pausable capabilities.
