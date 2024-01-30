@@ -111,7 +111,7 @@ contract SimpleVesting is RoleBasedAccessControl {
         require(monthsElapsed >= 1, "At least one month should pass");
 
         uint256 monthsDue = monthsElapsed - claimedMonths;
-        require(monthsDue > 0, "No tokens due for claim");
+        require(monthsDue > 0, "No ether due for claim");
 
         uint256 claimAmount = monthsDue * monthlyReleaseAmount;
         require(claimAmount <= totalVestment, "Claim exceeds total vestment");
