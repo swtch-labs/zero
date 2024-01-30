@@ -94,7 +94,7 @@ Smart Contracts
 - **ERC-721Receiver** : ERC-721 with receiver capabilities.
 
 ## In Progress 
-Smart Contracts we are building next among others. See our [Github Issues](https://duckduckgo.com "Zero Github Issues").
+Smart Contracts we are building next among others. See our [Github Issues](https://github.com/Astor/zero/issues "Zero Github Issues").
 
 - **ERC-20 Escrow** : ERC20 token simple one-time use escrow.
 - **ERC-20 Proof Of Funds** : ERC20 token proof of funds.
